@@ -23,7 +23,7 @@ export default defineConfig({
     plugins: [],
   },
   build: {
-    outDir: 'dist', // Output directory (you can change this)
+    outDir: 'docs', // Output directory (you can change this)
     assetsDir: 'assets', // Where to put assets
     emptyOutDir: true, // Clean the output directory before build
     target: 'esnext',
