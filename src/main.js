@@ -3,10 +3,12 @@ import { CanvasRecorder } from './CanvasRecorder.js';
 import settings from "./settings";
 import helpers from "./helpers";
 
+console.log('COUCOU')
+
 const API_TOKEN = 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzM4MjM2Njg5LCJzdWIiOiJmYWMzYWZjOS0zOTEyLTRlNTUtYTdiZS03MjJlOGRmYWY4ZjV-UFJPRFVDVElPTn5lOGQ0OTM1NS00YmNlLTRiYWEtODkzNC1lMWNlNmU0ZDM5M2IifQ.6sZB_6aFPL8OW-UO3Y37P7Rev7mzjS9IhNRFk7NelBI';
 const LENS_GROUP_ID = 'f7f4e367-f4b3-4de5-8e81-e9c842f2bf0b';
 
-const TARGET_LENS_ID = 'b8e614e9-bd59-429b-94a8-05ae9385210a';
+const TARGET_LENS_ID = 'e6b3c3d0-1899-4e66-8a71-5acd4d16d66f';
 
 // global variables
 let global = {
