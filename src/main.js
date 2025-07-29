@@ -3,10 +3,10 @@ import { CanvasRecorder } from './CanvasRecorder.js';
 import settings from "./settings";
 import helpers from "./helpers";
 
-const API_TOKEN = 'INSERT-YOUR-TOKEN';
-const LENS_GROUP_ID = 'INSERT-YOUR-GROUP-ID';
+const API_TOKEN = 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzM4MjM2Njg5LCJzdWIiOiJmYWMzYWZjOS0zOTEyLTRlNTUtYTdiZS03MjJlOGRmYWY4ZjV-UFJPRFVDVElPTn5lOGQ0OTM1NS00YmNlLTRiYWEtODkzNC1lMWNlNmU0ZDM5M2IifQ.6sZB_6aFPL8OW-UO3Y37P7Rev7mzjS9IhNRFk7NelBI';
+const LENS_GROUP_ID = 'f7f4e367-f4b3-4de5-8e81-e9c842f2bf0b';
 
-const TARGET_LENS_ID = 'YOUR-LENS-ID';
+const TARGET_LENS_ID = 'b8e614e9-bd59-429b-94a8-05ae9385210a';
 
 // global variables
 let global = {
