@@ -9,8 +9,8 @@ export default defineConfig({
     host: true, // Listen on all local IPs
     port: 5173, // Default Vite port
     https: {
-      key: fs.readFileSync('YOUR-KEY.pem'), // Path to your key file
-      cert: fs.readFileSync('YOUR-CERT.pem'), // Path to your cert file
+      // key: fs.readFileSync('YOUR-KEY.pem'), // Path to your key file
+      // cert: fs.readFileSync('YOUR-CERT.pem'), // Path to your cert file
     },
     headers: {
       'Cross-Origin-Opener-Policy': 'same-origin',
