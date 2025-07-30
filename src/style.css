@@ -67,6 +67,7 @@ button {
   height: 100%;
 
   user-select: none;
+  pointer-events: none;
 }
 
 #ui-left-top {
@@ -141,6 +142,7 @@ button {
 
   height: 160%;
   aspect-ratio: 1.0;
+  pointer-events: all;
 }
 
 #record-button > div {

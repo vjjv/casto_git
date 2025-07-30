@@ -23,7 +23,7 @@ let global = {
 
     videoProcessor: null,
 
-    currentCamera: 'BACK',
+    currentCamera: 'FRONT',
     canvasRecorder: null,
 
     // for photo & video record button
@@ -37,7 +37,7 @@ let global = {
 async function start() {
 
     helpers.overrideConsoleLog(settings.showDebugLog);
-    
+
     // setup monitor stuff
     setupAudioContextMonitor();
     setupAudioNodeMonitor();
@@ -234,16 +234,31 @@ function setupRecorder() {
 function setupRecordButton() {
     const recordButton = document.getElementById("record-button");
     let startTimestamp = 0; // use for check how long the button pressed
-
+    let isRecording = false;
     let startEvent = "mousedown";
-    let endEvent = "mouseup";
+    // let endEvent = "mouseup";
+    let endEvent = "mousedown";
 
     if (helpers.isMobile()) {
         startEvent = "touchstart";
         endEvent = "touchend";
     }
 
-    recordButton.addEventListener(startEvent, async () => {
+    //START RECORD
+    recordButton.addEventListener("mousedown", async () => {
+        if (!isRecording) {
+            startRecord();
+            setTimeout(e=> isRecording = true,1000) 
+        }
+        if (isRecording) {
+            endRecord();
+            setTimeout(e=> isRecording = false,1000) 
+        }
+    });
+
+
+
+    async function startRecord() {
         if (global.canvasRecorder == null) {
             setupRecorder();
         }
@@ -266,11 +281,11 @@ function setupRecordButton() {
             alert('Failed to start recording. Please try again.');
             return;
         }
-    });
+    }
 
-    recordButton.addEventListener(endEvent, async () => {
+    async function endRecord() {
         // Reset the button state
-        console.log("== mouse up ==");
+        console.log("== mouse up ==" + isRecording);
         global.recordButtonReleased = true;
 
         // check button hold time diff
@@ -288,7 +303,7 @@ function setupRecordButton() {
             // blink animation
             let effectCanvas = document.getElementById("photo-snapshot-effect");
             effectCanvas.classList.add("animating");
-            
+
             setTimeout(() => {
                 effectCanvas.classList.remove("animating");
             }, 200);
@@ -312,7 +327,9 @@ function setupRecordButton() {
                 return;
             }
         }
-    });
+    }
+
+
 }
 
 function setupSwitchCameraButton() {
@@ -401,7 +418,7 @@ function updateRenderSize() {
         ctx.scale(dpr, dpr);
     }
 
-    if(streamSource) {
+    if (streamSource) {
         // Set the render size for the media stream source
         streamSource.setRenderSize(logicalWidth * dpr, logicalHeight * dpr);
     }
