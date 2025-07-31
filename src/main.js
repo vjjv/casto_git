@@ -95,7 +95,7 @@ async function setupCameraKit() {
     await SetCameraSide(settings.defaultCameraType);
 
     const lens = await cameraKit.lensRepository.loadLens(TARGET_LENS_ID, LENS_GROUP_ID);
-    await session.applyLens(lens);
+    await session.applyLens(lens, { launchParams: {"prenom": "Paolo", "ville":"Marseilles"} } );
 }
 
 
