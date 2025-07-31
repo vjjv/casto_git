@@ -132,8 +132,7 @@ export class CanvasRecorder {
     }
 
     stop() {
-        if (this.mediaRecorder)
-        {
+        if (this.mediaRecorder) {
             this.mediaRecorder.requestData();
             this.mediaRecorder.stop();
         }
@@ -192,15 +191,27 @@ export class CanvasRecorder {
         const url = window.URL.createObjectURL(saveBlob);
         const a = document.createElement('a');
 
-        const fileFullName = `${name}.${resultExtension}`;
+        // const fileFullName = `${name}.${resultExtension}`;
+        const fileFullName = 'baba.mp4' //`${name}.${resultExtension}`;
 
         console.log(fileFullName);
 
-        a.style.display = 'none';
-        a.href = url;
-        a.download = fileFullName;
-        document.body.appendChild(a);
-        a.click();
+        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+
+            a.style.display = 'none';
+            a.href = url;
+            a.download = fileFullName;
+            document.body.appendChild(a);
+            a.click();
+        } else {
+            //v2 baba
+            const file = new File([saveBlob], "video.mp4", { type: "video/mp4" });
+            await navigator.share({
+                // title: "Example File",
+                files: [file]
+            });
+        }
 
         setTimeout(() => {
             document.body.removeChild(a);

@@ -95,6 +95,8 @@ async function setupCameraKit() {
 
     const lens = await cameraKit.lensRepository.loadLens(TARGET_LENS_ID, LENS_GROUP_ID);
     await session.applyLens(lens, { launchParams: { "prenom": window.prenom, "ville": window.ville } });
+    console.log('applyLens : ' + window.prenom + '' + window.ville);
+
 }
 
 
@@ -449,6 +451,8 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-document.getElementById('btn-commencer').addEventListener("click",  () => {
+document.getElementById('btn-commencer').addEventListener("click", () => {
+    console.log('start()');
+
     start();
 });

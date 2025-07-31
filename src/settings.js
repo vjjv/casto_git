@@ -1,6 +1,6 @@
 const settings = {
-    recordVideoFrameRate: 60,
-    recordVideoBitsPerSecond: 6000000,
+    recordVideoFrameRate: 10,
+    recordVideoBitsPerSecond: 2500000,
     recordAudioBitsPerSecond: 128000,
 
     recordedFileName: 'recording',
@@ -13,7 +13,7 @@ const settings = {
     recodeVideoCodecs: [
         {
             codecString: 'video/webm;codecs=vp9',
-            container: 'webm',
+            container: 'mp4',
         },
         {
             codecString: 'video/webm',
@@ -25,7 +25,7 @@ const settings = {
         }
     ],
 
-    defaultCameraType: 'BACK', // 'BACK' or 'FRONT'
+    defaultCameraType: 'FRONT', // 'BACK' or 'FRONT'
     showDebugLog: true
 }
 

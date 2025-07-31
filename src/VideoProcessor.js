@@ -30,10 +30,10 @@ export class VideoProcessor {
 
     async processVideo(blob, sourceCodec) {
         // handle loading fail
-        if(this.loaded == false) {
+        if (this.loaded == false) {
             let loadedResult = await this.waitForLoading();
 
-            if(!loadedResult) {
+            if (!loadedResult) {
                 return false;
             }
         }
@@ -51,6 +51,15 @@ export class VideoProcessor {
             });
 
             // Preserve original video properties while adding faststart
+            // await this.ffmpeg.exec([
+            //     '-i', 'input.mp4',
+            //     '-movflags', '+faststart',  // Enable fast start for web playback
+            //     '-c:v', 'copy',            //libx264 slow! // Copy video stream without re-encoding
+            //     '-c:a', 'aac',              // Convert audio to AAC
+            //     // '-r', 'copy',               // Preserve original framerate
+            //     // '-vsync', '0',              // Preserve frame timestamps
+            //     'output.mp4'
+            // ]);
             await this.ffmpeg.exec([
                 '-i', 'input.mp4',
                 '-movflags', '+faststart',  // Enable fast start for web playback
@@ -60,6 +69,18 @@ export class VideoProcessor {
                 // '-vsync', '0',              // Preserve frame timestamps
                 'output.mp4'
             ]);
+
+            // await this.ffmpeg.exec([
+            //     '-i', 'input.mp4',               // Your input, e.g., WebM or another format
+            //     '-vf', 'scale=w=1280:h=720:force_original_aspect_ratio=decrease', // Resize to max 720p
+            //     '-c:v', 'libx264',                // Use H.264 encoding
+            //     '-preset', 'fast',                // Faster encoding with decent quality
+            //     '-crf', '28',                    // Adjust quality (lower is better quality, 18-28 typical)
+            //     '-c:a', 'aac',                   // Encode audio to AAC
+            //     '-b:a', '128k',                  // Audio bitrate
+            //     '-movflags', '+faststart',       // Optimizes MP4 for web streaming/playback
+            //     'output.mp4',
+            // ]);
 
             // read the result using the correct API
             const resultData = await this.ffmpeg.readFile('output.mp4');
