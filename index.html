@@ -17,9 +17,9 @@
   </main>
 
   <style>
-   
+
   </style>
-  <div class="container">
+  <div id="intro" class="container">
     <img src="./assets/logo.png" alt="Direction Casto" class="logo" />
     <div class="form-group">
       <div>
@@ -34,27 +34,32 @@
     <div class="instructions">
       <p>1. Remplis ton prénom<br>
         2. Remplis le nom de ton magasin<br>
-        2. Appuie sur ENREGISTRER<br>
+        2. Appuie sur Commencer, enregistre ensuite<br>
         3. Présente toi ainsi que ton rayon<br>
-        4. Tape sur l’écran pour lancer l’animation</p>
+        4. Tape sur l’écran pour lancer l’animation finale</p>
     </div>
-    <button class="btn" onclick="submitForm()">ENREGISTRER</button>
+    <button id="btn-commencer" class="btn" onclick="submitForm()">COMMENCER</button>
   </div>
 
   <script>
     function submitForm() {
       const prenom = document.getElementById('prenom').value.trim();
       const ville = document.getElementById('ville').value.trim();
-
+      window.prenom = prenom;
+      window.ville = ville;
       if (!prenom || !ville) {
         alert("Merci de remplir tous les champs !");
         return;
       }
 
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('record-button').style.display = 'block';
       // Replace this with your own submit logic
       console.log("Form submitted with:", { prenom, ville });
-      alert("Enregistrement réussi !");
+      // alert("Enregistrement réussi !");
     }
+
+    
   </script>
 
 
@@ -87,7 +92,7 @@
     </div>
 
     <!-- <div class="poweredbysnap-logo"> -->
-      <!-- <img id="image" src="./assets/powered_by_snap_thin.png" alt="Powered by Snap" /> -->
+    <!-- <img id="image" src="./assets/powered_by_snap_thin.png" alt="Powered by Snap" /> -->
     <!-- </div> -->
 
     <!-- <div id="loading">

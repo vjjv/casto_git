@@ -3,7 +3,6 @@ import { CanvasRecorder } from './CanvasRecorder.js';
 import settings from "./settings";
 import helpers from "./helpers";
 
-console.log('COUCOU')
 
 const API_TOKEN = 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzM4MjM2Njg5LCJzdWIiOiJmYWMzYWZjOS0zOTEyLTRlNTUtYTdiZS03MjJlOGRmYWY4ZjV-UFJPRFVDVElPTn5lOGQ0OTM1NS00YmNlLTRiYWEtODkzNC1lMWNlNmU0ZDM5M2IifQ.6sZB_6aFPL8OW-UO3Y37P7Rev7mzjS9IhNRFk7NelBI';
 const LENS_GROUP_ID = 'f7f4e367-f4b3-4de5-8e81-e9c842f2bf0b';
@@ -95,7 +94,7 @@ async function setupCameraKit() {
     await SetCameraSide(settings.defaultCameraType);
 
     const lens = await cameraKit.lensRepository.loadLens(TARGET_LENS_ID, LENS_GROUP_ID);
-    await session.applyLens(lens, { launchParams: {"prenom": "Paolo", "ville":"Marseilles"} } );
+    await session.applyLens(lens, { launchParams: { "prenom": window.prenom, "ville": window.ville } });
 }
 
 
@@ -231,6 +230,26 @@ function setupRecorder() {
     }
 }
 
+function clickCanvasCapture(relX = 0.5, relY = 0.93) {
+    const canvas = document.getElementById('camerakit-canvas');
+    if (!canvas) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const x = rect.left + relX * rect.width;
+    const y = rect.top + relY * rect.height;
+
+    ['mouseover', 'mouseenter', 'mousedown', 'mouseup', 'click'].forEach(eventType => {
+        const event = new MouseEvent(eventType, {
+            bubbles: true,
+            cancelable: true,
+            clientX: x,
+            clientY: y,
+            view: window
+        });
+        canvas.dispatchEvent(event);
+    });
+}
+
 function setupRecordButton() {
     const recordButton = document.getElementById("record-button");
     let startTimestamp = 0; // use for check how long the button pressed
@@ -248,11 +267,12 @@ function setupRecordButton() {
     recordButton.addEventListener("mousedown", async () => {
         if (!isRecording) {
             startRecord();
-            setTimeout(e=> isRecording = true,1000) 
+            clickCanvasCapture();
+            setTimeout(e => isRecording = true, 1000)
         }
         if (isRecording) {
             endRecord();
-            setTimeout(e=> isRecording = false,1000) 
+            setTimeout(e => isRecording = false, 1000)
         }
     });
 
@@ -429,4 +449,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-start();
+document.getElementById('btn-commencer').addEventListener("click",  () => {
+    start();
+});

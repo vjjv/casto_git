@@ -92,7 +92,7 @@ button {
   width: 40%;
   height: 8%;
 
-  display: flex;
+  display: none;
   flex-direction: row-reverse;
 }
 
@@ -132,14 +132,14 @@ button {
   margin-right: 36px;
   width: 30%;
   box-sizing: border-box;
-  
+  transform: scale(0);
   display: flex;
   flex-direction: row-reverse;
 }
 
 #record-button {
   position: relative;
-
+  display: none;
   height: 160%;
   aspect-ratio: 1.0;
   pointer-events: all;
@@ -382,8 +382,10 @@ button {
     }
 
     .instructions {
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-bottom: 20px;
+      text-align: left;
+      margin-left: 10px;
     }
 
     .btn {
