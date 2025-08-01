@@ -22,7 +22,8 @@ export default defineConfig({
       'Cross-Origin-Embedder-Policy': 'require-corp',
     },
   },
-  base: './', // This makes all asset paths relative instead of absolute
+  base: '/', // This makes all asset paths relative instead of absolute
+  // base: './', // This makes all asset paths relative instead of absolute
   worker: {
     format: 'es',
     plugins: [],

@@ -265,15 +265,75 @@ function setupRecordButton() {
         endEvent = "touchend";
     }
 
+    /////////////////
+    let canvas = document.getElementById('camerakit-canvas');
+    var videoStream = canvas.captureStream(30);
+
+
+        // Create a new stream that combines video and audio tracks
+        var combinedStream = new MediaStream();
+
+        // Add video tracks from canvas stream
+        videoStream.getVideoTracks().forEach(function (track) {
+            combinedStream.addTrack(track);
+        });
+
+        // Add audio tracks from microphone stream
+        global.userMediaStream.getAudioTracks().forEach(function (track) {
+            combinedStream.addTrack(track);
+        });
+
+        var mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/mp4' });
+
+        var chunks = [];
+        mediaRecorder.ondataavailable = function (e) {
+            chunks.push(e.data);
+        };
+
+        mediaRecorder.onstop = function (e) {
+            var blob = new Blob(chunks, { type: 'video/mp4' });
+            chunks = [];
+            var videoURL = URL.createObjectURL(blob);
+
+            var video = document.getElementById('recordedVideo');
+            if (!video) {
+                video = document.createElement('video');
+                video.id = 'recordedVideo';
+                video.controls = true;
+                document.body.appendChild(video);
+            }
+            video.src = videoURL;
+
+            // share(blob);
+
+            window.open(videoURL, '_blank');
+        };
+
+
+
+
+    /////////////
+
+
+
+
     //START RECORD
     recordButton.addEventListener("mousedown", async () => {
         if (!isRecording) {
-            startRecord();
+            //baba
+            mediaRecorder.start();
+            recordButton.classList.add("recording");
+
+            // startRecord();
             clickCanvasCapture();
             setTimeout(e => isRecording = true, 1000)
         }
         if (isRecording) {
-            endRecord();
+            //baba
+            mediaRecorder.stop();
+            recordButton.classList.remove("recording");
+
+            // endRecord();
             setTimeout(e => isRecording = false, 1000)
         }
     });

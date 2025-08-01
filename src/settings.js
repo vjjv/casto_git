@@ -1,6 +1,6 @@
 const settings = {
-    recordVideoFrameRate: 10,
-    recordVideoBitsPerSecond: 2500000,
+    recordVideoFrameRate: 30,
+    recordVideoBitsPerSecond: 3000000,
     recordAudioBitsPerSecond: 128000,
 
     recordedFileName: 'recording',
@@ -8,17 +8,17 @@ const settings = {
 
     recordMicrophoneAudio: true,
     recordLensAudio: true,
-    processVideoWithFFmpeg: true,
+    processVideoWithFFmpeg: false,
 
     recodeVideoCodecs: [
-        {
-            codecString: 'video/webm;codecs=vp9',
-            container: 'mp4',
-        },
-        {
-            codecString: 'video/webm',
-            container: 'webm',
-        },
+        // {
+        //     codecString: 'video/webm;codecs=vp9',
+        //     container: 'mp4',
+        // },
+        // {
+        //     codecString: 'video/webm',
+        //     container: 'webm',
+        // },
         {
             codecString: 'video/mp4',
             container: 'mp4',

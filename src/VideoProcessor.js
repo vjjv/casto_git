@@ -51,24 +51,24 @@ export class VideoProcessor {
             });
 
             // Preserve original video properties while adding faststart
-            // await this.ffmpeg.exec([
-            //     '-i', 'input.mp4',
-            //     '-movflags', '+faststart',  // Enable fast start for web playback
-            //     '-c:v', 'copy',            //libx264 slow! // Copy video stream without re-encoding
-            //     '-c:a', 'aac',              // Convert audio to AAC
-            //     // '-r', 'copy',               // Preserve original framerate
-            //     // '-vsync', '0',              // Preserve frame timestamps
-            //     'output.mp4'
-            // ]);
             await this.ffmpeg.exec([
                 '-i', 'input.mp4',
                 '-movflags', '+faststart',  // Enable fast start for web playback
-                '-c:v', 'copy',             // Copy video stream without re-encoding
+                '-c:v', 'copy',            //libx264 slow! // Copy video stream without re-encoding
                 '-c:a', 'aac',              // Convert audio to AAC
                 // '-r', 'copy',               // Preserve original framerate
                 // '-vsync', '0',              // Preserve frame timestamps
                 'output.mp4'
             ]);
+            // await this.ffmpeg.exec([
+            //     '-i', 'input.mp4',
+            //     '-movflags', '+faststart',  // Enable fast start for web playback
+            //     '-c:v', 'copy',             // Copy video stream without re-encoding
+            //     '-c:a', 'aac',              // Convert audio to AAC
+            //     // '-r', 'copy',               // Preserve original framerate
+            //     // '-vsync', '0',              // Preserve frame timestamps
+            //     'output.mp4'
+            // ]);
 
             // await this.ffmpeg.exec([
             //     '-i', 'input.mp4',               // Your input, e.g., WebM or another format
@@ -97,8 +97,8 @@ export class VideoProcessor {
             console.log("Error processing video: " + error);
             // Clean up any remaining files
             try {
-                await this.ffmpeg.deleteFile('input.mp4');
-                await this.ffmpeg.deleteFile('output.mp4');
+                // await this.ffmpeg.deleteFile('input.mp4');
+                // await this.ffmpeg.deleteFile('output.mp4');
             } catch (cleanupError) {
                 console.error("Error during cleanup:", cleanupError);
             }
