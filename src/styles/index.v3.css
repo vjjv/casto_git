@@ -41,7 +41,7 @@ body {
   justify-content: center;
   z-index: 999;
 
-  display: none; 
+  display: none;
 }
 
 #outline {
@@ -319,6 +319,13 @@ body {
   height: 70px;
 }
 
+/* @media (max-width: 640px) {
+  .logo {
+    transform: scale(2);
+  }
+} */
+
+
 .form-group {
   flex-grow: 1;
   display: flex;
@@ -326,6 +333,12 @@ body {
   justify-content: center;
   gap: 30px;
 }
+
+/* @media (max-width: 640px) {
+  .form-group {
+    transform: scale(2.5);
+  }
+} */
 
 label {
   font-size: 2rem;
@@ -352,6 +365,13 @@ input {
   margin-left: 10px;
 }
 
+/* @media (max-width: 640px) {
+  .instructions {
+    transform: scale(2.5);
+    margin-bottom: 320px;
+  }
+} */
+
 .btn {
   background-color: red;
   color: white;
@@ -360,12 +380,18 @@ input {
   padding: 15px 30px;
   border: none;
   border-radius: 50px;
-  margin-bottom: 20px;
   box-shadow: 0 5px 0 #a70000;
   width: 80%;
   max-width: 300px;
   align-self: center;
 }
+
+/* @media (max-width: 640px) {
+  .btn {
+    transform: scale(2.5);
+    margin-bottom: 200px;
+  }
+} */
 
 .btn:active {
   transform: translateY(3px);
