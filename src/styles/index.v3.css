@@ -317,6 +317,7 @@ body {
 .logo {
   margin-top: 10px;
   height: 70px;
+  transform: scale(2);
 }
 
 /* @media (max-width: 640px) {
@@ -332,6 +333,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+  transform: scale(2.5);
 }
 
 /* @media (max-width: 640px) {
@@ -363,6 +365,8 @@ input {
   margin-bottom: 20px;
   text-align: left;
   margin-left: 10px;
+  transform: scale(2.5);
+  margin-bottom: 320px;
 }
 
 /* @media (max-width: 640px) {
@@ -384,6 +388,8 @@ input {
   width: 80%;
   max-width: 300px;
   align-self: center;
+  transform: scale(2.5);
+  margin-bottom: 200px;
 }
 
 /* @media (max-width: 640px) {
