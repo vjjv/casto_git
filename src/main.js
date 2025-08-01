@@ -117,9 +117,12 @@ import { Settings } from "./settings"
     document.getElementById('btn-commencer').addEventListener("click", () => {
       start();
     });
-    document.getElementById("back-button").onclick = async () => {
+    document.getElementById('back-button').addEventListener("click", () => {
       start();
-    }
+    });
+    // document.getElementById("back-button").onclick = async () => {
+    //   start();
+    // }
 
     function clickCanvasCapture(relX = 0.5, relY = 0.93) {
       const canvas = document.getElementById('canvas');
