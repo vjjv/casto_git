@@ -16,7 +16,9 @@ import { Settings } from "./settings"
   ; (async function () {
 
     async function start() {
-
+      console.log('start()');
+      canClickCanvas = true;
+      document.getElementById('switch-button').style.display = 'block'
 
       // Get environment variables
       const apiToken = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzM4MjM2Njg5LCJzdWIiOiJmYWMzYWZjOS0zOTEyLTRlNTUtYTdiZS03MjJlOGRmYWY4ZjV-UFJPRFVDVElPTn5lOGQ0OTM1NS00YmNlLTRiYWEtODkzNC1lMWNlNmU0ZDM5M2IifQ.6sZB_6aFPL8OW-UO3Y37P7Rev7mzjS9IhNRFk7NelBI";
@@ -113,11 +115,11 @@ import { Settings } from "./settings"
 
     let canClickCanvas = false;
     document.getElementById('btn-commencer').addEventListener("click", () => {
-      console.log('start()');
-      canClickCanvas = true;
-      document.getElementById('switch-button').style.display = 'block'
       start();
     });
+    document.getElementById("back-button").onclick = async () => {
+      start();
+    }
 
     function clickCanvasCapture(relX = 0.5, relY = 0.93) {
       const canvas = document.getElementById('canvas');
