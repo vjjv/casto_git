@@ -323,6 +323,7 @@ function setupRecordButton() {
             //baba
             mediaRecorder.start();
             recordButton.classList.add("recording");
+            
 
             // startRecord();
             clickCanvasCapture();
