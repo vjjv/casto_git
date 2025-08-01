@@ -101,10 +101,10 @@ import { Settings } from "./settings"
       })
 
       // Add window resize listener
-      window.addEventListener("resize", () => uiManager.updateRenderSize(source, liveRenderTarget))
+      // window.addEventListener("resize", () => uiManager.updateRenderSize(source, liveRenderTarget))
 
       // Update initial render size
-      uiManager.updateRenderSize(source, liveRenderTarget)
+      // uiManager.updateRenderSize(source, liveRenderTarget)
     }
 
     let canClickCanvas = false;
