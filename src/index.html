@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Camera Kit Template</title>
+  <meta name="description" content="Camera Kit Template" />
+  <meta name="robots" content="noindex" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="switch-cam">
+    <button id="switch-button" class="button-class"></button>
+  </div>
+  <div class="poweredbysnap-logo">
+    <img id="image" src="../assets/Powered_bysnap.png" alt="Powered by Snap" />
+  </div>
+  <div id="controls">
+    <img id="outline" src="../assets/RecordOutline.png" />
+    <button id="record-button" class="button-class"></button>
+  </div>
+
+  <div id="action-buttons" style="display: none">
+    <button id="share-button" class="button-class">
+      <img id="shareImg" src="../assets/ShareButton.png" alt="share" />
+    </button>
+    <button id="download-button" class="button-class">
+      <img id="downloadImg" src="../assets/DownloadButton.png" alt="download" />
+    </button>
+  </div>
+
+  <div id="back-button-container" style="display: none">
+    <button id="back-button" class="button-class">
+      <img id="backImg" src="../assets/BackButton.png" alt="back" />
+    </button>
+  </div>
+
+  <div id="loading">
+    <img id="loading-icon" src="../assets/LoadingIcon.png" alt="loading" />
+  </div>
+
+
+  <div id="intro" class="container">
+    <img src="./assets/logo.png" alt="Direction Casto" class="logo" />
+    <div class="form-group">
+      <div>
+        <label for="prenom">Prénom :</label><br />
+        <input type="text" id="prenom" name="prenom" required />
+      </div>
+      <div>
+        <label for="ville">Ville (Casto de...) :</label><br />
+        <input type="text" id="ville" name="ville" required />
+      </div>
+    </div>
+    <div class="instructions">
+      <p>1. Remplis ton prénom<br>
+        2. Remplis le nom de ton magasin<br>
+        2. Appuie sur Commencer, enregistre ensuite<br>
+        3. Présente toi ainsi que ton rayon<br>
+        4. Tape sur l’écran pour lancer l’animation finale</p>
+    </div>
+    <button id="btn-commencer" class="btn" onclick="submitForm()">COMMENCER</button>
+  </div>
+
+  <script>
+    function submitForm() {
+      const prenom = document.getElementById('prenom').value.trim().toUpperCase();
+      const ville = document.getElementById('ville').value.trim().toUpperCase();
+      window.prenom = prenom;
+      window.ville = ville;
+      if (!prenom || !ville) {
+        alert("Merci de remplir tous les champs !");
+        return;
+      }
+
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('controls').style.display = 'block';
+      // Replace this with your own submit logic
+      console.log("Form submitted with:", { prenom, ville });
+      // alert("Enregistrement réussi !");
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
