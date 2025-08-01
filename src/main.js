@@ -15,6 +15,14 @@ import { VideoProcessor } from "./videoProcessor"
 import { Settings } from "./settings"
   ; (async function () {
 
+    let isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if(!isMobile){
+      // document.getElementById('desktop').style.display = 'flex';
+      return;
+    } else{
+      document.getElementById('desktop').style.display = 'none';
+    }
+
     async function start() {
       console.log('start()');
       canClickCanvas = true;
