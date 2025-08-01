@@ -115,6 +115,7 @@ import { Settings } from "./settings"
     document.getElementById('btn-commencer').addEventListener("click", () => {
       console.log('start()');
       canClickCanvas = true;
+      document.getElementById('switch-button').style.display = 'block'
       start();
     });
 
