@@ -3,14 +3,17 @@
   src: url('../assets/Casto-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* improves loading behavior */
+  font-display: swap;
+  /* improves loading behavior */
 }
+
 @font-face {
   font-family: 'casto-bold';
   src: url('../assets/Casto-Bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* improves loading behavior */
+  font-display: swap;
+  /* improves loading behavior */
 }
 
 body {
@@ -65,9 +68,9 @@ body {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  height: var(--button-size, 100px);
+  height: 100px;
   /* Default for mobile */
-  width: var(--button-size, 100px);
+  width: 100px;
   border: none;
   z-index: 900;
   transition: background-color 0.2s ease;
@@ -78,9 +81,9 @@ body {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  height: var(--button-size, 100px);
+  height:  100px;
   /* Default for mobile */
-  width: var(--button-size, 100px);
+  width: 100px;
   background-image: url("../assets/RecordButton.png");
   background-size: cover;
   background-position: center;
@@ -129,8 +132,8 @@ body {
 #back-button {
   transform: none;
   background-color: transparent;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   color: transparent;
   border: none;
   cursor: pointer;
@@ -154,8 +157,8 @@ body {
 }
 
 #share-button {
-  height: 150px;
-  width: 150px;
+  height: 50px;
+  width: 50px;
   background-color: transparent;
   transform: translate(-25%, 0);
   color: transparent;
@@ -180,8 +183,8 @@ body {
 }
 
 #download-button {
-  height: 150px;
-  width: 150px;
+  height: 50px;
+  width: 50px;
   background-color: transparent;
   transform: translate(25%, 0);
   color: transparent;
@@ -213,8 +216,8 @@ body {
 }
 
 #switch-button {
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
   background-image: url("../assets/SwitchButton.png");
   /* Green background */
   background-size: contain;

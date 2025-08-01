@@ -12,7 +12,7 @@ module.exports = {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "docs"),
     chunkFilename: "[name].[contenthash].chunk.js",
-    clean: true,
+    clean: false,
   },
   module: {
     rules: [
