@@ -6,7 +6,7 @@
 export const Settings = {
   // Camera settings
   camera: {
-    fps: 60,
+    fps: 25,
     constraints: {
       front: {
         video: {
@@ -32,8 +32,8 @@ export const Settings = {
   // Recording settings
   recording: {
     mimeType: "video/mp4",
-    fps: 60,
-    outputFileName: "recording.mp4",
+    fps: 25,
+    outputFileName: "Direction_Casto.mp4",
   },
 
   // FFmpeg settings
