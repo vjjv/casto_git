@@ -172,6 +172,12 @@ body {
   -webkit-touch-callout: none;
 }
 
+@media (min-width: 640px) {
+  #share-button {
+    display: none !important;
+  }
+}
+
 #share-button img {
   max-width: 100%;
   max-height: 100%;
@@ -198,6 +204,12 @@ body {
   -webkit-touch-callout: none;
 }
 
+@media (max-width: 640px) {
+  #download-button {
+    display: none !important;
+  }
+}
+
 #download-button img {
   max-width: 100%;
   max-height: 100%;
@@ -213,7 +225,6 @@ body {
   top: 3%;
   right: 5%;
   z-index: 950;
-  display: block;
 }
 
 #switch-button {
@@ -236,7 +247,7 @@ body {
   /* Smooth hover animation */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  display: none;
+  display: block;
 }
 
 #switch-button:active {
