@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'casto-regular';
-  src: url('../assets/Casto-Regular.otf') format('opentype');
+  src: url(817868e4b248016cebbb.otf) format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'casto-bold';
-  src: url('../assets/Casto-Bold.otf') format('opentype');
+  src: url(64d81387324c8a87438f.otf) format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -84,7 +84,7 @@ body {
   height:  75px;
   /* Default for mobile */
   width: 75px;
-  background-image: url("../assets/RecordButton.png");
+  background-image: url(assets/RecordButton.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -219,7 +219,7 @@ body {
 #switch-button {
   height: 40px;
   width: 40px;
-  background-image: url("../assets/SwitchButton.png");
+  background-image: url(assets/SwitchButton.png);
   /* Green background */
   background-size: contain;
   /* Ensure the image covers the button */
