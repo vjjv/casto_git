@@ -65,11 +65,11 @@ import { Settings } from "./settings"
       })
       await session.setSource(source)
       source.setTransform(Transform2D.MirrorX)
-      const resolutionMultiplier = window.devicePixelRatio;
-      const width = window.innerWidth * resolutionMultiplier;
-      const height = window.innerHeight * resolutionMultiplier;
-      await source.setRenderSize(width, height);
-      // await source.setRenderSize(window.innerWidth, window.innerHeight)
+      // const resolutionMultiplier = window.devicePixelRatio;
+      // const width = window.innerWidth * resolutionMultiplier;
+      // const height = window.innerHeight * resolutionMultiplier;
+      // await source.setRenderSize(width, height);
+      await source.setRenderSize(window.innerWidth, window.innerHeight)
       await session.setFPSLimit(Settings.camera.fps)
       await session.play()
 
