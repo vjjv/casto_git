@@ -65,14 +65,14 @@ export class UIManager {
 
     videoPreview.src = url;
     videoPreview.style.position = "fixed";
-    videoPreview.style.right = "10px";
-    videoPreview.style.top = "5%";
+    // videoPreview.style.right = "10px";
+    videoPreview.style.top = "0%";
     videoPreview.style.width = "100vw";
     videoPreview.style.zIndex = "11";
     videoPreview.style.display = "block";
     videoPreview.style.backgroundColor = "#000";
-    videoPreview.style.borderRadius = "8px";
-    videoPreview.style.boxShadow = "0 2px 10px rgba(0,0,0,0.5)";
+    // videoPreview.style.borderRadius = "8px";
+    // videoPreview.style.boxShadow = "0 2px 10px rgba(0,0,0,0.5)";
     videoPreview.style.height = "auto";
 
 
