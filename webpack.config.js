@@ -9,7 +9,8 @@ require("dotenv").config()
 module.exports = {
   entry: "./src/main.js",
   output: {
-    filename: "[name].[contenthash].js",
+    // filename: "[name].[contenthash].js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "docs"),
     chunkFilename: "[name].[contenthash].chunk.js",
     clean: false,
@@ -53,7 +54,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "docs"),
       publicPath: "/",
       watch: true,
     },

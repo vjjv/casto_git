@@ -1,10 +1,4 @@
-/**
- * Camera Kit Web Demo with Recording Feature
- * Created by gowaaa (https://www.gowaaa.com)
- * A creative technology studio specializing in AR experiences
- *
- * @copyright 2025 GOWAAA
- */
+
 
 import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/camera-kit"
 import "./styles/index.v3.css"
@@ -18,7 +12,8 @@ import { Settings } from "./settings"
     let isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     if(!isMobile){
       // document.getElementById('desktop').style.display = 'flex';
-      return;
+      // return; //baba to uncomment
+      document.getElementById('desktop').style.display = 'none'; //baba to remove
     } else{
       document.getElementById('desktop').style.display = 'none';
     }
