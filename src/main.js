@@ -12,8 +12,8 @@ import { Settings } from "./settings"
     let isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     if(!isMobile){
       // document.getElementById('desktop').style.display = 'flex';
-      // return; //baba to uncomment
-      document.getElementById('desktop').style.display = 'none'; //baba to remove
+      return; //baba to uncomment
+      // document.getElementById('desktop').style.display = 'none'; //baba to remove
     } else{
       document.getElementById('desktop').style.display = 'none';
     }

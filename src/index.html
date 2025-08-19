@@ -12,7 +12,7 @@
 
 <body>
 
-  <div id="desktop" >
+  <div id="desktop">
     Ouvrez ce lien sur votre téléphone pour commencer.
     <img src="./assets/qr.png" alt="">
   </div>
@@ -28,12 +28,17 @@
     <button id="record-button" class="button-class"></button>
   </div>
 
-  <div id="action-buttons" style="display: none">
-    <button id="share-button" class="button-class">
-      <img id="shareImg" src="../assets/DownloadButton.png" alt="share" />
+  <div id="action-buttons" style="display: none;">
+    <!-- <button id="share-button" class="button-class"> -->
+    <button id="restart-button" class="btn"  onclick="location.reload();">
+      RECOMMENCER
     </button>
-    <button id="download-button" class="button-class">
-      <img id="downloadImg" src="../assets/DownloadButton.png" alt="download" />
+    <button id="share-button" class="btn" >
+      ENREGISTRER
+    </button>
+
+    <button id="download-button" class="btn" >
+      ENREGISTRER
     </button>
   </div>
 
