@@ -9,8 +9,7 @@ require("dotenv").config()
 module.exports = {
   entry: "./src/main.js",
   output: {
-    // filename: "[name].[contenthash].js",
-    filename: "[name].js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "docs"),
     chunkFilename: "[name].[contenthash].chunk.js",
     clean: false,
