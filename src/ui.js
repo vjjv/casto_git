@@ -32,7 +32,7 @@ export class UIManager {
 
   displayPostRecordButtons(url, fixedBlob) {
     this.actionButton.style.display = "block";
-    this.backButtonContainer.style.display = "block";
+    // this.backButtonContainer.style.display = "block";
     this.switchButton.style.display = "none";
 
     // Create or reuse the overlay element
